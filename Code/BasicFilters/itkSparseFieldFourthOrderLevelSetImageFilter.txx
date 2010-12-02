@@ -26,7 +26,7 @@
 namespace itk
 {
 template< class TInputImage, class TOutputImage >
-const unsigned long
+const typename TInputImage::SizeValueType
 SparseFieldFourthOrderLevelSetImageFilter< TInputImage, TOutputImage >
 ::m_NumVertex = 1 << ImageDimension;
 
@@ -96,8 +96,8 @@ SparseFieldFourthOrderLevelSetImageFilter< TInputImage, TOutputImage >
 {
   unsigned int        j, k;
   unsigned int        counter;
-  unsigned long       position,  stride[ImageDimension], indicator[ImageDimension];
-  const unsigned long center = it.Size() / 2;
+  typename TInputImage::SizeValueType       position,  stride[ImageDimension], indicator[ImageDimension];
+  const typename TInputImage::SizeValueType center = it.Size() / 2;
   NormalVectorType    normalvector;
   ValueType           curvature;
   bool                flag = false;
@@ -106,7 +106,7 @@ SparseFieldFourthOrderLevelSetImageFilter< TInputImage, TOutputImage >
 
   for ( j = 0; j < ImageDimension; j++ )
     {
-    stride[j] = it.GetStride( (unsigned long)j );
+    stride[j] = it.GetStride( j );
     indicator[j] = 1 << j;
     }
 
