@@ -48,7 +48,7 @@ void
 RelabelComponentImageFilter< TInputImage, TOutputImage >
 ::GenerateData()
 {
-  unsigned long i;
+  typename TInputImage::SizeValueType i;
 
   // Use a map to keep track of the size of each object.  Object
   // number -> ObjectType (which has Object number and the two sizes)

@@ -24,7 +24,7 @@
 namespace itk
 {
 template< class TImageType, class TSparseImageType >
-const unsigned long
+const typename LevelSetFunctionWithRefitTerm< TImageType, TSparseImageType >::NeighborhoodSizeValueType
 LevelSetFunctionWithRefitTerm< TImageType, TSparseImageType >
 ::m_NumVertex = 1 << TImageType::ImageDimension;
 
@@ -81,10 +81,10 @@ LevelSetFunctionWithRefitTerm< TImageType, TSparseImageType >
 {
   unsigned int  j, k;
   unsigned int  counterN, counterP;
-  unsigned long positionN,  positionP,
+  NeighborhoodSizeValueType positionN,  positionP,
                 stride[TImageType::ImageDimension], indicator[TImageType::ImageDimension];
 
-  const unsigned long center = neighborhood.Size() / 2;
+  const NeighborhoodSizeValueType center = neighborhood.Size() / 2;
 
   const NeighborhoodScalesType neighborhoodScales = this->ComputeNeighborhoodScales();
 

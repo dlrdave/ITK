@@ -273,6 +273,7 @@ ResampleImageFilter< TInputImage, TOutputImage, TInterpolatorPrecisionType >
 
   typedef ContinuousIndex< TInterpolatorPrecisionType, ImageDimension >
   ContinuousIndexType;
+  typedef typename TInputImage::IndexValueType IndexValueType;
   ContinuousIndexType inputIndex;
 
   // Support for progress methods/callbacks
@@ -321,13 +322,13 @@ ResampleImageFilter< TInputImage, TOutputImage, TInterpolatorPrecisionType >
       // and the value is truncated to this precision.
       for ( unsigned int i = 0; i < ImageDimension; ++i )
         {
-        long roundedInputIndex = (long)( inputIndex[i] );
+        IndexValueType roundedInputIndex = (IndexValueType)( inputIndex[i] );
         if ( inputIndex[i] < 0.0 && inputIndex[i] != (double)roundedInputIndex )
           {
           --roundedInputIndex;
           }
         double inputIndexFrac = inputIndex[i] - roundedInputIndex;
-        double newInputIndexFrac = (long)( precisionConstant
+        double newInputIndexFrac = (IndexValueType)( precisionConstant
                                            * inputIndexFrac )
                                    / precisionConstant;
         inputIndex[i] = roundedInputIndex + newInputIndexFrac;
@@ -386,13 +387,13 @@ ResampleImageFilter< TInputImage, TOutputImage, TInterpolatorPrecisionType >
       // and the value is truncated to this precision.
       for ( unsigned int i = 0; i < ImageDimension; ++i )
         {
-        long roundedInputIndex = (long)( inputIndex[i] );
+        IndexValueType roundedInputIndex = (IndexValueType)( inputIndex[i] );
         if ( inputIndex[i] < 0.0 && inputIndex[i] != (double)roundedInputIndex )
           {
           --roundedInputIndex;
           }
         double inputIndexFrac = inputIndex[i] - roundedInputIndex;
-        double newInputIndexFrac = (long)( precisionConstant
+        double newInputIndexFrac = (IndexValueType)( precisionConstant
                                            * inputIndexFrac )
                                    / precisionConstant;
         inputIndex[i] = roundedInputIndex + newInputIndexFrac;
@@ -450,13 +451,13 @@ ResampleImageFilter< TInputImage, TOutputImage, TInterpolatorPrecisionType >
       // and the value is truncated to this precision.
       for ( unsigned int i = 0; i < ImageDimension; ++i )
         {
-        long roundedInputIndex = (long)( inputIndex[i] );
+        IndexValueType roundedInputIndex = (IndexValueType)( inputIndex[i] );
         if ( inputIndex[i] < 0.0 && inputIndex[i] != (double)roundedInputIndex )
           {
           --roundedInputIndex;
           }
         double inputIndexFrac = inputIndex[i] - roundedInputIndex;
-        double newInputIndexFrac = (long)( precisionConstant
+        double newInputIndexFrac = (IndexValueType)( precisionConstant
                                            * inputIndexFrac )
                                    / precisionConstant;
         inputIndex[i] = roundedInputIndex + newInputIndexFrac;
@@ -525,6 +526,7 @@ ResampleImageFilter< TInputImage, TOutputImage, TInterpolatorPrecisionType >
 
   typedef ContinuousIndex< TInterpolatorPrecisionType, ImageDimension >
   ContinuousIndexType;
+  typedef typename TInputImage::IndexValueType IndexValueType;
   ContinuousIndexType inputIndex;
   ContinuousIndexType tmpInputIndex;
 
@@ -600,13 +602,13 @@ ResampleImageFilter< TInputImage, TOutputImage, TInterpolatorPrecisionType >
   // and the value is truncated to this precision.
   for ( unsigned int i = 0; i < ImageDimension; ++i )
     {
-    long roundedInputIndex = (long)( inputIndex[i] );
+    IndexValueType roundedInputIndex = (IndexValueType)( inputIndex[i] );
     if ( inputIndex[i] < 0.0 && inputIndex[i] != (double)roundedInputIndex )
       {
       --roundedInputIndex;
       }
     double inputIndexFrac = inputIndex[i] - roundedInputIndex;
-    double newInputIndexFrac = (long)( precisionConstant
+    double newInputIndexFrac = (IndexValueType)( precisionConstant
                                        * inputIndexFrac )
                                / precisionConstant;
     inputIndex[i] = roundedInputIndex + newInputIndexFrac;
@@ -639,13 +641,13 @@ ResampleImageFilter< TInputImage, TOutputImage, TInterpolatorPrecisionType >
     // and the value is truncated to this precision.
     for ( unsigned int i = 0; i < ImageDimension; ++i )
       {
-      long roundedInputIndex = (long)( inputIndex[i] );
+      IndexValueType roundedInputIndex = (IndexValueType)( inputIndex[i] );
       if ( inputIndex[i] < 0.0 && inputIndex[i] != (double)roundedInputIndex )
         {
         --roundedInputIndex;
         }
       double inputIndexFrac = inputIndex[i] - roundedInputIndex;
-      double newInputIndexFrac = (long)( precisionConstant
+      double newInputIndexFrac = (IndexValueType)( precisionConstant
                                          * inputIndexFrac )
                                  / precisionConstant;
       inputIndex[i] = roundedInputIndex + newInputIndexFrac;
