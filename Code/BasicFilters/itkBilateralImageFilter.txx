@@ -31,7 +31,7 @@ namespace itk
 template< class TInputImage, class TOutputImage >
 void
 BilateralImageFilter< TInputImage, TOutputImage >
-::SetRadius(const unsigned long i)
+::SetRadius(const SizeValueType i)
 {
   m_Radius.Fill(i);
 }
