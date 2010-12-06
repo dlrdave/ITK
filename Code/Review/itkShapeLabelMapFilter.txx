@@ -591,6 +591,7 @@ ShapeLabelMapFilter< TImage, TLabelImage >
         typename VectorLineType::const_iterator li = ls.begin();
         typename VectorLineType::const_iterator ni = ns.begin();
 
+        IndexValueType lZero = 0;
         IndexValueType lMin = 0;
         IndexValueType lMax = 0;
 
@@ -604,16 +605,16 @@ ShapeLabelMapFilter< TImage, TLabelImage >
           lMax = lMin + li->GetLength() - 1;
 
           // add as much intercepts as intersections of the 2 lines
-          intercepts[no] += std::max( 0l, std::min(lMax, nMax) - std::max(lMin, nMin) + 1 );
+          intercepts[no] += vnl_math_max( lZero, vnl_math_min(lMax, nMax) - vnl_math_max(lMin, nMin) + 1 );
           // std::cout << "============" << std::endl;
-          // std::cout << "  lMin:" << lMin << " lMax:" << lMax << " nMin:" << nMin << " nMax:" << nMax << " count: " << std::max( 0l, std::min(lMax, nMax) - std::max(lMin, nMin) + 1 ) << std::endl;
+          // std::cout << "  lMin:" << lMin << " lMax:" << lMax << " nMin:" << nMin << " nMax:" << nMax << " count: " << vnl_math_max( 0l, vnl_math_min(lMax, nMax) - vnl_math_max(lMin, nMin) + 1 ) << std::endl;
           // std::cout << "  " << no << ": " << intercepts[no] << std::endl;
-          // std::cout << std::max( 0l, std::min(lMax, nMax+1) - std::max(lMin, nMin+1) + 1 ) << std::endl;
-          // std::cout << std::max( 0l, std::min(lMax, nMax-1) - std::max(lMin, nMin-1) + 1 ) << std::endl;
+          // std::cout << vnl_math_max( lZero, vnl_math_min(lMax, nMax+1) - vnl_math_max(lMin, nMin+1) + 1 ) << std::endl;
+          // std::cout << vnl_math_max( lZero, vnl_math_min(lMax, nMax-1) - vnl_math_max(lMin, nMin-1) + 1 ) << std::endl;
           // left diagonal intercepts
-          intercepts[dno] += std::max( 0l, std::min(lMax, nMax+1) - std::max(lMin, nMin+1) + 1 );
+          intercepts[dno] += vnl_math_max( lZero, vnl_math_min(lMax, nMax+1) - vnl_math_max(lMin, nMin+1) + 1 );
           // right diagonal intercepts
-          intercepts[dno] += std::max( 0l, std::min(lMax, nMax-1) - std::max(lMin, nMin-1) + 1 );
+          intercepts[dno] += vnl_math_max( lZero, vnl_math_min(lMax, nMax-1) - vnl_math_max(lMin, nMin-1) + 1 );
 
           // go to the next line or the next neighbor depending on where we are
           if(nMax <= lMax )
