@@ -608,7 +608,7 @@ BalloonForceFilter< TInputMesh, TOutputMesh >
 
   typename IPixelType::VectorType u[3];
 
-  unsigned long i = 0; // arnaud: I guess i an InputCellIdentifier?
+  typename InputMeshType::CellIdentifier i = 0;
   for (; cells_it != myCells->End(); ++cells_it, i++ )
     {
     tp = cells_it.Value()->GetPointIds();
@@ -665,9 +665,9 @@ BalloonForceFilter< TInputMesh, TOutputMesh >
   IPixelType *y_PixelType;
 
   x_PixelType = &x;
-  const unsigned long *tp;
+  const typename TInputMesh::PointIdentifier *tp;
 
-  unsigned long tripoints[3];
+  typename TInputMesh::PointIdentifier tripoints[3];
 
   if ( m_NumNewNodes == 0 ) { return; }
   else { cell = 1; }
@@ -776,7 +776,7 @@ BalloonForceFilter< TInputMesh, TOutputMesh >
     {
     tp = cells.Value()->GetPointIds();
 
-    if ( tp[0] > (unsigned long)m_NewNodes[j][3] )
+    if ( tp[0] > (typename TInputMesh::PointIdentifier)m_NewNodes[j][3] )
             {}
     else
       {
@@ -1027,7 +1027,7 @@ BalloonForceFilter< TInputMesh, TOutputMesh >
   z_PixelType = &z;
   float gap, dis[3] = { 0, 0, 0 }, st, *st_PixelType;
   st_PixelType = &st;
-  const unsigned long *tp;
+  const typename TInputMesh::PointIdentifier *tp;
 
   i = 0;
   while ( i != m_NumberOfNodes - 2 )

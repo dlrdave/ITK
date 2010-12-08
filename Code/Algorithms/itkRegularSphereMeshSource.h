@@ -18,6 +18,7 @@
 #ifndef __itkRegularSphereMeshSource_h
 #define __itkRegularSphereMeshSource_h
 
+#include "itkIntTypes.h"
 #include "itkMesh.h"
 #include "itkMeshSource.h"
 #include "itkTriangleCell.h"
@@ -96,7 +97,7 @@ protected:
 
   PointType Divide(const PointType & p1, const PointType & p2) const;
 
-  void AddCell(OutputMeshType *mesh, const typename OutputMeshType::PointIdentifier *pointIds, unsigned long idx);
+  void AddCell(OutputMeshType *mesh, const typename OutputMeshType::PointIdentifier *pointIds, IdentifierType idx);
 
   /** model center */
   PointType m_Center;

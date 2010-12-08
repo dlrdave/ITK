@@ -237,7 +237,7 @@ BilateralImageFilter< TInputImage, TOutputImage >
 {
   typename TInputImage::ConstPointer input = this->GetInput();
   typename TOutputImage::Pointer output = this->GetOutput();
-  unsigned long i;
+  typename TInputImage::IndexValueType i;
   const double  rangeDistanceThreshold = m_DynamicRangeUsed;
 
   // Now we are ready to bilateral filter!
