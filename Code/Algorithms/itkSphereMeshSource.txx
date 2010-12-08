@@ -18,6 +18,7 @@
 #ifndef __itkSphereMeshSource_txx
 #define __itkSphereMeshSource_txx
 
+#include "itkIntTypes.h"
 #include "itkSphereMeshSource.h"
 
 namespace itk
@@ -51,7 +52,7 @@ void
 SphereMeshSource< TOutputMesh >
 ::GenerateData()
 {
-  unsigned long i, j, jn, p, numpts;
+  IdentifierType i, j, jn, p, numpts;
   double        ustep, vstep, ubeg, vbeg, u, v;
   int           signu, signv;
 

@@ -57,7 +57,7 @@ RegularSphereMeshSource< TOutputMesh >
   PointsContainerPointer myPoints = outputMesh->GetPoints();
 
   PointType     p1;
-  unsigned long idx = 0;
+  IdentifierType idx = 0;
 
   p1[0] = 1 * m_Scale[0] + m_Center[0];
   p1[1] = 0 * m_Scale[1] + m_Center[1];
@@ -90,12 +90,12 @@ RegularSphereMeshSource< TOutputMesh >
   outputMesh->SetPoint(idx++, p1);
 
   /* Six equidistant points lying on the unit sphere */
-  const unsigned long XPLUS = 0;
-  const unsigned long XMIN  = 1;
-  const unsigned long YPLUS = 2;
-  const unsigned long YMIN  = 3;
-  const unsigned long ZPLUS = 4;
-  const unsigned long ZMIN  = 5;
+  const IdentifierType XPLUS = 0;
+  const IdentifierType XMIN  = 1;
+  const IdentifierType YPLUS = 2;
+  const IdentifierType YMIN  = 3;
+  const IdentifierType ZPLUS = 4;
+  const IdentifierType ZMIN  = 5;
 
   tripoints[0] = YPLUS; tripoints[1] = ZPLUS; tripoints[2] = XPLUS;
   this->AddCell(outputMesh, tripoints, 0);
@@ -137,10 +137,10 @@ RegularSphereMeshSource< TOutputMesh >
     v_pt[0] = &v[0];
     v_pt[1] = &v[1];
     v_pt[2] = &v[2];
-    unsigned long        cellIdx = 0;
-    unsigned long        pointIdxOffset = outputMesh->GetNumberOfPoints();
-    unsigned long        pointIdx = pointIdxOffset;
-    unsigned long        newIdx[3] = { 0, 1, 2 };
+    IdentifierType        cellIdx = 0;
+    IdentifierType        pointIdxOffset = outputMesh->GetNumberOfPoints();
+    IdentifierType        pointIdx = pointIdxOffset;
+    IdentifierType        newIdx[3] = { 0, 1, 2 };
 
     // container for the processed edges
     // when subdividing a triangle, the corresponding subdivided
@@ -151,7 +151,7 @@ RegularSphereMeshSource< TOutputMesh >
     // and for the Ids to exist only if the point has been copied
     // i.e. even if the container is a vector,
     // we ned to copy the old points first.
-    for ( unsigned long j = 0; j < pointIdxOffset; j++ )
+    for ( IdentifierType j = 0; j < pointIdxOffset; j++ )
       {
       outputMesh->GetPoint(j, v_pt[0]);
       // this is needed when the PointType is a QuadEdgeMeshPoint
@@ -337,7 +337,7 @@ RegularSphereMeshSource< TOutputMesh >
 template< class TOutputMesh >
 void
 RegularSphereMeshSource< TOutputMesh >
-::AddCell(OutputMeshType *mesh, const typename OutputMeshType::PointIdentifier *pointIds, unsigned long idx)
+::AddCell(OutputMeshType *mesh, const typename OutputMeshType::PointIdentifier *pointIds, IdentifierType idx)
 {
   CellAutoPointer testCell(new TriCellType, true);
 
