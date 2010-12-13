@@ -233,7 +233,7 @@ VTKPolyDataReader< TOutputMesh >
   //
 
   PointIdentifier numberOfCellPoints;
-  long            ids[3];
+  IndexValueType  ids[3];
 
   for ( CellIdentifier i = 0; i < numberOfPolygons; i++ )
     {
@@ -270,18 +270,18 @@ VTKPolyDataReader< TOutputMesh >
                         << ". VTKPolyDataReader can only read triangles");
       }
 
-    if ( static_cast< long >( ids[0] ) < 0
-         || static_cast< long >( ids[1] ) < 0
-         || static_cast< long >( ids[2] ) < 0 )
+    if ( static_cast< IndexValueType >( ids[0] ) < 0
+         || static_cast< IndexValueType >( ids[1] ) < 0
+         || static_cast< IndexValueType >( ids[2] ) < 0 )
       {
       itkExceptionMacro(<< "Error reading file: " << m_FileName
                         << "point ids must be >= 0.\n"
                            "ids=" << ids[0] << " " << ids[1] << " " << ids[2]);
       }
 
-    if ( static_cast< long >( ids[0] ) >= numberOfPoints
-         || static_cast< long >( ids[1] ) >= numberOfPoints
-         || static_cast< long >( ids[2] ) >= numberOfPoints )
+    if ( static_cast< IndexValueType >( ids[0] ) >= numberOfPoints
+         || static_cast< IndexValueType >( ids[1] ) >= numberOfPoints
+         || static_cast< IndexValueType >( ids[2] ) >= numberOfPoints )
       {
       itkExceptionMacro(<< "Error reading file: " << m_FileName
                         << "Point ids must be < number of points: "
