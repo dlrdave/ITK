@@ -268,7 +268,7 @@ ConnectedComponentImageFilter< TInputImage, TOutputImage, TMaskImage >
     {
     if ( !m_LineMap[ThisIdx].empty() )
       {
-      for ( OffsetVec::const_iterator I = LineOffsets.begin();
+      for ( typename OffsetVec::const_iterator I = LineOffsets.begin();
             I != LineOffsets.end(); ++I )
         {
         SizeValueType NeighIdx = ThisIdx + ( *I );
@@ -301,7 +301,7 @@ ConnectedComponentImageFilter< TInputImage, TOutputImage, TMaskImage >
         {
         if ( !m_LineMap[ThisIdx].empty() )
           {
-          for ( OffsetVec::const_iterator I = LineOffsets.begin();
+          for ( typename OffsetVec::const_iterator I = LineOffsets.begin();
                 I != LineOffsets.end(); ++I )
             {
             SizeValueType NeighIdx = ThisIdx + ( *I );
@@ -395,7 +395,7 @@ ConnectedComponentImageFilter< TInputImage, TOutputImage, TMaskImage >
         {
         fstart.Set(m_BackgroundValue);
         }
-      for ( SizeValueType i = 0; i < cIt->length; ++i, ++oit )
+      for ( SizeValueType i = 0; i < (SizeValueType) cIt->length; ++i, ++oit )
         {
         oit.Set(lab);
         }
