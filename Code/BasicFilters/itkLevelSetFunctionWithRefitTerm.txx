@@ -84,6 +84,7 @@ LevelSetFunctionWithRefitTerm< TImageType, TSparseImageType >
   NeighborhoodSizeValueType positionN,  positionP,
                 stride[TImageType::ImageDimension], indicator[TImageType::ImageDimension];
 
+  const NeighborhoodSizeValueType one = 1;
   const NeighborhoodSizeValueType center = neighborhood.Size() / 2;
 
   const NeighborhoodScalesType neighborhoodScales = this->ComputeNeighborhoodScales();
@@ -94,7 +95,7 @@ LevelSetFunctionWithRefitTerm< TImageType, TSparseImageType >
   for ( j = 0; j < TImageType::ImageDimension; j++ )
     {
     stride[j] = neighborhood.GetStride(j);
-    indicator[j] = 1 << j;
+    indicator[j] = one << j;
     }
   curvature = NumericTraits< ScalarValueType >::Zero;
 
