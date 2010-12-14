@@ -117,10 +117,10 @@ typedef::size_t    uintptr_t;
 
 #endif // ITK_HAVE_STDINT_H
 
-typedef size_t        SizeValueType;
+typedef uintptr_t     SizeValueType;
 typedef SizeValueType IdentifierType;
-typedef ptrdiff_t     IndexValueType;
-typedef ptrdiff_t     OffsetValueType;
+typedef intptr_t      IndexValueType;
+typedef intptr_t      OffsetValueType;
 }
 
 #endif  /* __itkIntTypes_h */

@@ -84,9 +84,9 @@ void SimplexMeshAdaptTopologyFilter< TInputMesh, TOutputMesh >
   mv->AddVisitor(simplexVisitor);
   this->GetInput(0)->Accept(mv);
 
-  DoubleValueMapType::Pointer areas = simplexVisitor->GetAreaMap();
+  typename DoubleValueMapType::Pointer areas = simplexVisitor->GetAreaMap();
   DoubleContainerIterator     areaIt = areas->Begin();
-  DoubleValueMapType::Pointer curvatures = simplexVisitor->GetCurvatureMap();
+  typename DoubleValueMapType::Pointer curvatures = simplexVisitor->GetCurvatureMap();
   DoubleContainerIterator     curvatureIt = curvatures->Begin();
 
   double averageCurvature = simplexVisitor->GetTotalMeanCurvature();
