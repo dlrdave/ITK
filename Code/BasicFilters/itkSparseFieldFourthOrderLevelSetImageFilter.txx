@@ -97,6 +97,7 @@ SparseFieldFourthOrderLevelSetImageFilter< TInputImage, TOutputImage >
   unsigned int        j, k;
   unsigned int        counter;
   typename TInputImage::SizeValueType       position,  stride[ImageDimension], indicator[ImageDimension];
+  const typename TInputImage::SizeValueType one = 1;
   const typename TInputImage::SizeValueType center = it.Size() / 2;
   NormalVectorType    normalvector;
   ValueType           curvature;
@@ -107,7 +108,7 @@ SparseFieldFourthOrderLevelSetImageFilter< TInputImage, TOutputImage >
   for ( j = 0; j < ImageDimension; j++ )
     {
     stride[j] = it.GetStride( j );
-    indicator[j] = 1 << j;
+    indicator[j] = one << j;
     }
 
   curvature = NumericTraits< ValueType >::Zero;
