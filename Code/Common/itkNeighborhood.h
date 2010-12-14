@@ -169,11 +169,11 @@ public:
   { return m_DataBuffer.size(); }
 
   /** Pass-through data access methods to the buffer. */
-  TPixel & operator[](unsigned int i)
+  TPixel & operator[](SizeValueType i)
   { return m_DataBuffer[i]; }
-  const TPixel & operator[](unsigned int i) const
+  const TPixel & operator[](SizeValueType i) const
   { return m_DataBuffer[i]; }
-  TPixel & GetElement(unsigned int i)
+  TPixel & GetElement(SizeValueType i)
   { return m_DataBuffer[i]; }
 
   /** Returns the element at the center of the neighborhood. */
