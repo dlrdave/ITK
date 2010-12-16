@@ -386,7 +386,6 @@ BalloonForceFilter< TInputMesh, TOutputMesh >
   int j = 0;
   while ( celldata != myCellData->End() )
     {
-    ++celldata;
     const int  x = (int)celldata.Value();
     switch ( x )
       {
@@ -401,6 +400,7 @@ BalloonForceFilter< TInputMesh, TOutputMesh >
         break;
       }
     ++j;
+    ++celldata;
     }
 }
 
