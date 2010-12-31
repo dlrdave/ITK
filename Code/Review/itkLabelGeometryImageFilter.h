@@ -96,14 +96,13 @@ public:
   typedef typename TIntensityImage::PixelType  PixelType;
 
   /** Label image related typedefs. */
-  typedef TLabelImage                           LabelImageType;
-  typedef typename TLabelImage::Pointer         LabelImagePointer;
-  typedef typename TLabelImage::RegionType      LabelRegionType;
-  typedef typename TLabelImage::SizeType        LabelSizeType;
-  typedef typename TLabelImage::IndexType       LabelIndexType;
-  typedef typename TLabelImage::PixelType       LabelPixelType;
-  typedef typename TLabelImage::PointType       LabelPointType;
-  typedef typename TLabelImage::SizeValueType   SizeValueType;
+  typedef TLabelImage                      LabelImageType;
+  typedef typename TLabelImage::Pointer    LabelImagePointer;
+  typedef typename TLabelImage::RegionType LabelRegionType;
+  typedef typename TLabelImage::SizeType   LabelSizeType;
+  typedef typename TLabelImage::IndexType  LabelIndexType;
+  typedef typename TLabelImage::PixelType  LabelPixelType;
+  typedef typename TLabelImage::PointType  LabelPointType;
 
   /** Image related typedefs. */
   itkStaticConstMacro(ImageDimension, unsigned int,

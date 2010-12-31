@@ -227,8 +227,6 @@ protected:
   float m_Rank;
 
 private:
-  typedef size_t   SizeValueType;
-
   typedef typename std::map< TInputPixel, SizeValueType, TCompare > MapType;
 
   MapType       m_Map;
@@ -247,9 +245,6 @@ template< class TInputPixel >
 class VectorRankHistogram
 {
 public:
-
-  typedef ptrdiff_t   OffsetValueType;
-
   typedef std::less< TInputPixel > TCompare;
 
   VectorRankHistogram()
@@ -380,8 +375,6 @@ protected:
   float m_Rank;
 
 private:
-  typedef size_t  SizeValueType;
-
   typedef typename std::vector< SizeValueType > VecType;
 
   VecType       m_Vec;

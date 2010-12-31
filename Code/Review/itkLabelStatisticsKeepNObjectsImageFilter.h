@@ -59,7 +59,6 @@ public:
   typedef typename InputImageType::ConstPointer  InputImageConstPointer;
   typedef typename InputImageType::RegionType    InputImageRegionType;
   typedef typename InputImageType::PixelType     InputImagePixelType;
-  typedef typename InputImageType::SizeValueType SizeValueType;
   typedef typename OutputImageType::Pointer      OutputImagePointer;
   typedef typename OutputImageType::ConstPointer OutputImageConstPointer;
   typedef typename OutputImageType::RegionType   OutputImageRegionType;

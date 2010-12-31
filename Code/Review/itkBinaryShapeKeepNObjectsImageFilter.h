@@ -60,7 +60,6 @@ public:
   typedef typename InputImageType::ConstPointer  InputImageConstPointer;
   typedef typename InputImageType::RegionType    InputImageRegionType;
   typedef typename InputImageType::PixelType     InputImagePixelType;
-  typedef typename InputImageType::SizeValueType SizeValueType;
   typedef typename OutputImageType::Pointer      OutputImagePointer;
   typedef typename OutputImageType::ConstPointer OutputImageConstPointer;
   typedef typename OutputImageType::RegionType   OutputImageRegionType;
@@ -74,9 +73,9 @@ public:
   itkStaticConstMacro(ImageDimension, unsigned int,
                       TInputImage::ImageDimension);
 
-  typedef typename TInputImage::SizeValueType    LabelType;
+  typedef SizeValueType LabelType;
 
-  typedef ShapeLabelObject< LabelType, itkGetStaticConstMacro(ImageDimension) > LabelObjectType;
+  typedef ShapeLabelObject< LabelType, itkGetStaticConstMacro(ImageDimension) >     LabelObjectType;
   typedef LabelMap< LabelObjectType >                                               LabelMapType;
   typedef BinaryImageToLabelMapFilter< InputImageType, LabelMapType >               LabelizerType;
   typedef Image< typename OutputImageType::PixelType, itkGetStaticConstMacro(OutputImageDimension) >

@@ -73,8 +73,8 @@ public:
 
   typedef typename LabelObjectType::Pointer LabelObjectPointerType;
 
-  typedef typename Superclass::SizeValueType  SizeValueType;
-  typedef SizeValueType                       LengthType;
+  typedef typename Superclass::SizeValueType SizeValueType;
+  typedef SizeValueType                      LengthType;
 
   /** Dimension of the image.  This constant is used by functions that are
    * templated over image type (as opposed to being templated over pixel type

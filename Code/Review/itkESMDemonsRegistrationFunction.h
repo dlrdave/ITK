@@ -86,7 +86,6 @@ public:
   typedef typename Superclass::FixedImagePointer FixedImagePointer;
   typedef typename FixedImageType::IndexType     IndexType;
   typedef typename FixedImageType::SizeType      SizeType;
-  typedef typename FixedImageType::SizeValueType SizeValueType;
   typedef typename FixedImageType::SpacingType   SpacingType;
   typedef typename FixedImageType::DirectionType DirectionType;
 

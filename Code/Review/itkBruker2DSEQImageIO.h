@@ -128,8 +128,6 @@ public:
   /** Run-time type information (and related methods). */
   itkTypeMacro(Bruker2DSEQImageIO, Superclass);
 
-  typedef Superclass::SizeValueType  SizeValueType;
-
   /** Special types used for Bruker meta data. */
   typedef VectorContainer< unsigned int, double > RECOFOVContainerType;
   typedef VectorContainer< unsigned int, int >    RECOTranspositionContainerType;

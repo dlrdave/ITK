@@ -103,8 +103,6 @@ public:
   typedef typename TInputImage::PixelType  PixelType;
   typedef typename TInputImage::OffsetType OffsetType;
 
-  typedef typename TInputImage::IndexValueType  IndexValueType;
-
   typedef TOutputImage                     OutputImageType;
   typedef typename TOutputImage::PixelType OutputPixelType;
 

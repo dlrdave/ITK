@@ -78,8 +78,6 @@ public:
   typedef typename TInputImage::IndexType          IndexType;
   typedef typename TInputImage::OffsetType         OffsetType;
   typedef typename TInputImage::SizeType           SizeType;
-  typedef typename OffsetType::OffsetValueType     OffsetValueType;
-  typedef typename SizeType::SizeValueType         SizeValueType;
 
   itkStaticConstMacro(ImageDimension, unsigned int,
                       TOutputImage::ImageDimension);

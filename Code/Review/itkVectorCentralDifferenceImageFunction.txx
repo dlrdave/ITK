@@ -63,8 +63,6 @@ VectorCentralDifferenceImageFunction< TInputImage, TCoordRep >
   const typename InputImageType::IndexType & start =
     this->GetInputImage()->GetBufferedRegion().GetIndex();
 
-  typedef typename InputImageType::OffsetValueType  OffsetValueType;
-
   for ( unsigned int dim = 0; dim < TInputImage::ImageDimension; dim++ )
     {
     // bounds checking

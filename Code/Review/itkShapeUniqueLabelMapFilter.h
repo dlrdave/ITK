@@ -53,7 +53,6 @@ public:
   typedef typename ImageType::ConstPointer    ImageConstPointer;
   typedef typename ImageType::PixelType       PixelType;
   typedef typename ImageType::IndexType       IndexType;
-  typedef typename ImageType::OffsetValueType OffsetValueType;
   typedef typename ImageType::LabelObjectType LabelObjectType;
   typedef typename LabelObjectType::LineType  LineType;
 

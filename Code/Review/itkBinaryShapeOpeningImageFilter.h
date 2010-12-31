@@ -70,8 +70,7 @@ public:
   itkStaticConstMacro(OutputImageDimension, unsigned int, TInputImage::ImageDimension);
   itkStaticConstMacro(ImageDimension, unsigned int, TInputImage::ImageDimension);
 
-  typedef typename TInputImage::SizeValueType  LabelType;
-
+  typedef SizeValueType LabelType;
 
   typedef ShapeLabelObject< LabelType, itkGetStaticConstMacro(ImageDimension) >     LabelObjectType;
   typedef LabelMap< LabelObjectType >                                               LabelMapType;

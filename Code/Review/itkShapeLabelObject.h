@@ -57,8 +57,6 @@ public:
 
   typedef LabelMap< Self > LabelMapType;
 
-  typedef typename LabelObjectType::SizeValueType  SizeValueType;
-
   itkStaticConstMacro(ImageDimension, unsigned int, VImageDimension);
 
   typedef typename Superclass::IndexType IndexType;

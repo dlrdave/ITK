@@ -71,7 +71,6 @@ public:
   typedef typename TOutputImage::InternalPixelType OutputInternalPixelType;
   typedef typename TInputImage::PixelType          InputPixelType;
   typedef typename TInputImage::InternalPixelType  InputInternalPixelType;
-  typedef typename TInputImage::SizeValueType      SizeValueType;
 
   itkStaticConstMacro(ImageDimension, unsigned int,
                       TOutputImage::ImageDimension);
@@ -181,8 +180,7 @@ private:
   bool                 m_FullyConnected;
 
   // some additional types
-  typedef typename TOutputImage::RegionType::SizeType   OutSizeType;
-  typedef typename TOutputImage::OffsetValueType        OffsetValueType;
+  typedef typename TOutputImage::RegionType::SizeType OutSizeType;
 
   // types to support the run length encoding of lines
   class runLength

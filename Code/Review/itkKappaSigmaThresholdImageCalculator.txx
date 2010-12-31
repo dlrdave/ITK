@@ -57,8 +57,7 @@ void
 KappaSigmaThresholdImageCalculator< TInputImage, TMaskImage >
 ::Compute()
 {
-  typedef typename InputImageType::IndexType      IndexType;
-  typedef typename InputImageType::SizeValueType  SizeValueType;
+  typedef typename InputImageType::IndexType IndexType;
 
   if ( !this->m_Image )
     {

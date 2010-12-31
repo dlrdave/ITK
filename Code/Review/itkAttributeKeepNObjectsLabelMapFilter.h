@@ -62,8 +62,6 @@ public:
 
   typedef typename Superclass::LabelObjectContainerType LabelObjectContainerType;
 
-  typedef typename ImageType::SizeValueType  SizeValueType;
-
   /** ImageDimension constants */
   itkStaticConstMacro(ImageDimension, unsigned int,
                       TImage::ImageDimension);

@@ -43,10 +43,8 @@ class LabelObjectLine
 public:
   itkStaticConstMacro(ImageDimension, unsigned int, VImageDimension);
 
-  typedef Index< VImageDimension >                          IndexType;
-  typedef typename Size< VImageDimension >::SizeValueType   LengthType;
-  typedef typename IndexType::OffsetType                    OffsetType;
-  typedef typename OffsetType::OffsetValueType              OffsetValueType;
+  typedef Index< VImageDimension > IndexType;
+  typedef SizeValueType            LengthType;
 
   LabelObjectLine() {}
   virtual ~LabelObjectLine() {}

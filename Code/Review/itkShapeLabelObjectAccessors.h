@@ -27,9 +27,8 @@ template< class TLabelObject >
 class ITK_EXPORT NumberOfPixelsLabelObjectAccessor
 {
 public:
-  typedef TLabelObject                              LabelObjectType;
-  typedef typename LabelObjectType::SizeValueType   SizeValueType;
-  typedef SizeValueType                             AttributeValueType;
+  typedef TLabelObject  LabelObjectType;
+  typedef SizeValueType AttributeValueType;
 
   inline AttributeValueType operator()(const LabelObjectType *labelObject) const
   {
@@ -93,9 +92,8 @@ template< class TLabelObject >
 class ITK_EXPORT NumberOfPixelsOnBorderLabelObjectAccessor
 {
 public:
-  typedef TLabelObject                              LabelObjectType;
-  typedef typename LabelObjectType::SizeValueType   SizeValueType;
-  typedef SizeValueType                             AttributeValueType;
+  typedef TLabelObject  LabelObjectType;
+  typedef SizeValueType AttributeValueType;
 
   inline AttributeValueType operator()(const LabelObjectType *labelObject) const
   {

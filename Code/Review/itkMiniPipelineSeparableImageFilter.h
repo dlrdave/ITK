@@ -75,8 +75,6 @@ public:
   /** n-dimensional Kernel radius. */
   typedef typename TInputImage::SizeType RadiusType;
 
-  typedef typename TInputImage::SizeValueType SizeValueType;
-
   virtual void SetRadius(const RadiusType &);
 
   virtual void SetRadius(const SizeValueType & radius)
