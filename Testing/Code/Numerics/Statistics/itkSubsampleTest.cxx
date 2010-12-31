@@ -35,8 +35,8 @@ int itkSubsampleTest(int, char* [] )
   // Now generate a random image
   typedef itk::RandomImageSource<FloatImage> SourceType;
   SourceType::Pointer source = SourceType::New();
-  unsigned long size[3] = {17, 8, 20};
-  unsigned long totalSize = size[0] * size[1] * size[2];
+  SourceType::SizeValueType size[3] = {17, 8, 20};
+  SourceType::SizeValueType totalSize = size[0] * size[1] * size[2];
 
   source->SetSize(size);
   float minValue = -100.0;
@@ -227,7 +227,7 @@ int itkSubsampleTest(int, char* [] )
   index.Fill(2);// index {2, 2, 2} = instance identifier (offset from image)
   ArrayPixelImageType::PixelType pixel = filter->GetInput()->GetPixel(index);
   ListSampleType::InstanceIdentifier ind =
-    static_cast< FloatImage::OffsetValueType >(filter->GetInput()
+    static_cast< itk::OffsetValueType >(filter->GetInput()
                                                ->ComputeOffset(index));
 
   if (pixel[0] != subsample->GetMeasurementVector(ind)[0])
